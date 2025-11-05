@@ -1,38 +1,34 @@
-<!DOCTYPE html>
-<html lang="te">
-<head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2914631277707668"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maanasikam - Electricity Bill Splitter</title>
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; text-align:center; padding:30px; }
-    h1 { color:#333; }
-    input, button { padding:10px; margin:8px; border-radius:6px; border:1px solid #ccc; }
-    button { background:#4CAF50; color:white; cursor:pointer; }
-    button:hover { background:#45a049; }
-  </style>
+<!doctype html><html lang="te">
+<head><meta name="google-adsense-account" content="ca-pub-2914631277707668">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maanasikam Tools Hub</title>
+<meta name="description" content="Small helpful tools for daily India problems">
+<style>
+  body{font-family:Arial, sans-serif;padding:20px;max-width:1000px;margin:auto}
+  .card{border:1px solid #eee;padding:14px;border-radius:8px;margin:8px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  .search{padding:10px;width:100%;box-sizing:border-box}
+</style>
 </head>
 <body>
-  <h1>⚡ విద్యుత్ బిల్ పంచుకుందాం</h1>
-  <p>మొత్తం బిల్ మొత్తం మరియు వ్యక్తుల సంఖ్య ఇవ్వండి 👇</p>
-  <input id="total" type="number" placeholder="మొత్తం బిల్ (₹)">
-  <input id="people" type="number" placeholder="వ్యక్తుల సంఖ్య">
-  <button onclick="calc()">లెక్కించు</button>
-  <h2 id="result"></h2>
+<h1>Maanasikam Tools Hub</h1>
+<input class="search" id="q" placeholder="Search tools (e.g., QR poster, invoice)">
+<div class="grid" id="list">
+  <!-- repeat card -->
+  <div class="card"><h3><a href="/tools/qr-poster.html">QR Order Poster</a></h3><p>Generate printable poster with QR.</p></div>
+  <div class="card"><h3><a href="/tools/electricity-splitter.html">Electricity Bill Splitter</a></h3><p>Split bills uniformly or custom shares.</p></div>
+  <!-- add cards for each tool -->
+</div>
 
-  <script>
-    function calc() {
-      const total = parseFloat(document.getElementById('total').value);
-      const people = parseInt(document.getElementById('people').value);
-      if (!total || !people || people <= 0) {
-        document.getElementById('result').innerText = "సరైన విలువలు ఇవ్వండి ⚠️";
-        return;
-      }
-      const per = (total / people).toFixed(2);
-      document.getElementById('result').innerText = `ప్రతి వ్యక్తి చెల్లించవలసినది: ₹${per}`;
-    }
-  </script>
-</body>
-</html>
+<script>
+  const list = document.getElementById('list');
+  const search = document.getElementById('q');
+  search.addEventListener('input', ()=> {
+    const v = search.value.toLowerCase();
+    Array.from(list.children).forEach(card=>{
+      card.style.display = card.innerText.toLowerCase().includes(v) ? '' : 'none';
+    });
+  });
+</script>
+</body></html>
