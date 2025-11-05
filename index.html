@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maanasikam - Electricity Bill Splitter</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; text-align:center; padding:30px; }
+    h1 { color:#333; }
+    input, button { padding:10px; margin:8px; border-radius:6px; border:1px solid #ccc; }
+    button { background:#4CAF50; color:white; cursor:pointer; }
+    button:hover { background:#45a049; }
+  </style>
+</head>
+<body>
+  <h1>⚡ విద్యుత్ బిల్ పంచుకుందాం</h1>
+  <p>మొత్తం బిల్ మొత్తం మరియు వ్యక్తుల సంఖ్య ఇవ్వండి 👇</p>
+  <input id="total" type="number" placeholder="మొత్తం బిల్ (₹)">
+  <input id="people" type="number" placeholder="వ్యక్తుల సంఖ్య">
+  <button onclick="calc()">లెక్కించు</button>
+  <h2 id="result"></h2>
+
+  <script>
+    function calc() {
+      const total = parseFloat(document.getElementById('total').value);
+      const people = parseInt(document.getElementById('people').value);
+      if (!total || !people || people <= 0) {
+        document.getElementById('result').innerText = "సరైన విలువలు ఇవ్వండి ⚠️";
+        return;
+      }
+      const per = (total / people).toFixed(2);
+      document.getElementById('result').innerText = `ప్రతి వ్యక్తి చెల్లించవలసినది: ₹${per}`;
+    }
+  </script>
+</body>
+</html>
