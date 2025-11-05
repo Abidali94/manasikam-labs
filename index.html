@@ -1,38 +1,29 @@
-<!doctype html><html lang="te">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta
-    name="google-adsense-account" 
-    content="ca-pub-2914631277707668
-    ">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Maanasikam Tools Hub</title>
-<meta name="description" content="Small helpful tools for daily India problems">
-<style>
-  body{font-family:Arial, sans-serif;padding:20px;max-width:1000px;margin:auto}
-  .card{border:1px solid #eee;padding:14px;border-radius:8px;margin:8px 0}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-  .search{padding:10px;width:100%;box-sizing:border-box}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-2914631277707668">
+  <title>Maanasikam Labs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fffaf0;
+      margin: 0;
+      padding: 40px;
+    }
+    h1 {
+      color: #444;
+    }
+    p {
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-<h1>Maanasikam Tools Hub</h1>
-<input class="search" id="q" placeholder="Search tools (e.g., QR poster, invoice)">
-<div class="grid" id="list">
-  <!-- repeat card -->
-  <div class="card"><h3><a href="/tools/qr-poster.html">QR Order Poster</a></h3><p>Generate printable poster with QR.</p></div>
-  <div class="card"><h3><a href="/tools/electricity-splitter.html">Electricity Bill Splitter</a></h3><p>Split bills uniformly or custom shares.</p></div>
-  <!-- add cards for each tool -->
-</div>
-
-<script>
-  const list = document.getElementById('list');
-  const search = document.getElementById('q');
-  search.addEventListener('input', ()=> {
-    const v = search.value.toLowerCase();
-    Array.from(list.children).forEach(card=>{
-      card.style.display = card.innerText.toLowerCase().includes(v) ? '' : 'none';
-    });
-  });
-</script>
-</body></html>
+  <h1>Welcome to Maanasikam Labs 🧠</h1>
+  <p>India’s first self-updating tools hub — Built for real-world problems.</p>
+  <p>More tools coming soon...</p>
+</body>
+</html>
